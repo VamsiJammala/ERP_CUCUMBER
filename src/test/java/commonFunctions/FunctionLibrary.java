@@ -27,6 +27,7 @@ public class FunctionLibrary
 {
 	public static WebDriver driver;
 	public static Properties conpro;
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	
 	public static WebDriver startbrowser() throws Throwable
 	{
@@ -37,6 +38,7 @@ public class FunctionLibrary
 		{
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		}
 		else if(conpro.getProperty("Browser").equalsIgnoreCase("firefox"))
 		{

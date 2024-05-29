@@ -7,9 +7,11 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "FeatureFiles/CustomerAdding.feature",
+		features = "FeatureFiles",
 		glue = "stepDefinitions",
-		dryRun = false
+		tags = "@stockitems",
+		dryRun = false,
+		plugin = {"pretty","html:./target/cucumber/result.html"}
 		)
 public class Runner {
 
